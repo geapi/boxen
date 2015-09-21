@@ -19,9 +19,5 @@ class people::geapi::applications {
   package { 
     'alfred': provider => 'brewcask' 
   }
-  
-  class { 'vlc': 
-    version => '2.1.5'
-  }
 }
 
