@@ -52,9 +52,7 @@ class people::geapi {
    file { 'Dock Plist':
      ensure  => file,
      require => [
-                  Property_list_key['Hide the dock'],
-                  Property_list_key['Align the Dock Center'],
-                  Property_list_key['Lower Right Hotcorner - Screen Saver'],
+                  Property_list_key['Hide the dock']
                 ],
      path    => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
      mode    => '0600',
