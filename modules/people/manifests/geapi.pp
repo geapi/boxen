@@ -40,7 +40,7 @@ class people::geapi {
      path       => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
      key        => 'autohide',
      value      => true,
-     value_type => 'boolen',
+     value_type => 'boolean',
      notify     => Exec['Restart the Dock'],
    }
 
