@@ -1,6 +1,6 @@
 class people::geapi {
   
-  include people::glarizza::applications
+  include people::geapi::applications
 
   notify { 'class people::geapi declared': }
 
