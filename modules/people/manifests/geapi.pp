@@ -43,7 +43,7 @@ class people::geapi {
      notify     => Exec['Restart the Dock'],
    }
 
-   property_list_key { 'Align the Dock Bottom':
+   property_list_key { 'Align the Dock Center':
      ensure     => present,
      path       => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
      key        => 'orientation',
