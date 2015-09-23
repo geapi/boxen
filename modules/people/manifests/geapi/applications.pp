@@ -1,5 +1,5 @@
-class people::geapi::applications { 
-  include textmate::textmate2::release 
+class people::geapi::applications {
+  include textmate::textmate2::release
   include iterm2::stable
   include flux
   include onepassword
@@ -15,9 +15,13 @@ class people::geapi::applications {
   include firefox
   include omnigraffle::pro
   include screenhero
-  
-  package { 
-    'alfred': provider => 'brewcask' 
-  }
-}
 
+  package {
+    'alfred': provider => 'brewcask'
+  }
+
+  class { 'intellij':
+    edition => 'ultimate',
+    version => '14.1.4'
+}
+}

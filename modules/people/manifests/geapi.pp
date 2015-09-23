@@ -1,5 +1,5 @@
 class people::geapi {
-  
+
   include people::geapi::applications
 
   notify { 'class people::geapi declared': }
@@ -22,41 +22,41 @@ class people::geapi {
     target  => "${::boxen_srcdir}/puppet/ext/envpuppet",
     require => Repository["${::boxen_srcdir}/puppet"],
   }
+
+
+  include iterm2::colors::solarized_light
+  include iterm2::colors::solarized_dark
   
-  # Disable Gatekeeper so you can install any package you want
-   property_list_key { 'Disable Gatekeeper':
-     ensure => present,
-     path   => '/var/db/SystemPolicy-prefs.plist',
-     key    => 'enabled',
-     value  => 'no',
-   }
+  include osx::global::enable_keyboard_control_access # enables the keyboard for navigating controls in dialogs
+  include osx::global::enable_standard_function_keys # enables the F1, F2, etc. keys to be treated as standard function keys
+  include osx::global::expand_print_dialog # expand the print dialog by default
+  include osx::global::expand_save_dialog # expand the save dialog by default
+  include osx::global::disable_remote_control_ir_receiver # disable remote control infrared receiver
+  include osx::global::disable_autocorrect # disables spelling autocorrection
 
-   $my_homedir = "/Users/${::luser}"
+  include osx::dock::autohide # automatically hide the dock
+  include osx::dock::clear_dock # ensures the dock only contains apps that are running
 
-   # NOTE: Dock prefs only take effect when you restart the dock
-   
-   property_list_key { 'Hide the dock':
-     ensure     => present,
-     path       => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
-     key        => 'autohide',
-     value      => true,
-     value_type => 'boolean',
-     notify     => Exec['Restart the Dock'],
-   }
+  include osx::finder::show_all_on_desktop
+  include osx::finder::empty_trash_securely # enable Secure Empty Trash
+  include osx::finder::unhide_library # unsets the hidden flag on ~/Library
+  include osx::finder::enable_quicklook_text_selection
+  include osx::finder::show_warning_before_emptying_trash
+  include osx::finder::show_warning_before_changing_an_extension
+  include osx::finder::show_all_filename_extensions
+  include osx::finder::no_file_extension_warnings
 
-   exec { 'Restart the Dock':
-     command     => '/usr/bin/killall -HUP Dock',
-     refreshonly => true,
-   }
+  include osx::safari::enable_developer_mode
+  include osx::no_network_dsstores # disable creation of .DS_Store files on network shares
+  include osx::keyboard::capslock_to_control # remaps capslock to control on attached keyboards
 
-   file { 'Dock Plist':
-     ensure  => file,
-     require => [
-                  Property_list_key['Hide the dock']
-                ],
-     path    => "${my_homedir}/Library/Preferences/com.apple.dock.plist",
-     mode    => '0600',
-     notify     => Exec['Restart the Dock'],
-   }
+  include osx::global::natural_mouse_scrolling
 
+  class { 'osx::dock::icon_size':
+    size => 24
+  }
+
+  class { 'osx::dock::position':
+    position => 'center'
+  }
 }
