@@ -22,6 +22,26 @@ class people::geapi {
     target  => "${::boxen_srcdir}/puppet/ext/envpuppet",
     require => Repository["${::boxen_srcdir}/puppet"],
   }
+  
+  $my_homedir = "/Users/${::luser}"
+  # My dotfile repository
+  repository { "${my_sourcedir}/dotfiles":
+    source => 'geapi/dotfiles',
+  }
+
+  file { "${my_homedir}/.bash_profile":
+    ensure  => link,
+    mode    => '0644',
+    target  => "${my_sourcedir}/dotfiles/bash_profile.sh",
+    require => Repository["${my_sourcedir}/dotfiles"],
+  }
+  
+  file { "${my_homedir}/.aliases":
+    ensure  => link,
+    mode    => '0644',
+    target  => "${my_sourcedir}/dotfiles/aliases",
+    require => Repository["${my_sourcedir}/dotfiles"],
+  }
 
 
   include iterm2::colors::solarized_light
