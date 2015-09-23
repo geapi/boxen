@@ -66,8 +66,6 @@ github "xquartz",     "1.2.1"
 # github "redis",       "3.1.0"
 # github "sysctl",      "1.0.1"
 
-mod "puppetlabs-stdlib",  "v2.2.1",   :github_tarball => "puppetlabs/puppetlabs-stdlib"
-
 github "textmate",      "1.1.0"
 github "iterm2", "1.2.5"
 github "flux", "1.0.1"
