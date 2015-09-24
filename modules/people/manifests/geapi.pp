@@ -25,22 +25,29 @@ class people::geapi {
   
   $my_homedir = "/Users/${::luser}"
   # My dotfile repository
-  repository { "${my_sourcedir}/dotfiles":
+  repository { "${my_homedir}/dotfiles":
     source => 'geapi/dotfiles',
   }
 
   file { "${my_homedir}/.bash_profile":
     ensure  => link,
     mode    => '0644',
-    target  => "${my_sourcedir}/dotfiles/bash_profile.sh",
-    require => Repository["${my_sourcedir}/dotfiles"],
+    target  => "${my_homedir}/dotfiles/bash/bash_profile.sh",
+    require => Repository["${my_homedir}/dotfiles"],
   }
   
   file { "${my_homedir}/.aliases":
     ensure  => link,
     mode    => '0644',
-    target  => "${my_sourcedir}/dotfiles/aliases",
-    require => Repository["${my_sourcedir}/dotfiles"],
+    target  => "${my_homedir}/dotfiles/bash/aliases",
+    require => Repository["${my_homedir}/dotfiles"],
+  }
+  
+  file { "${my_homedir}/.tm_properties":
+    ensure  => link,
+    mode    => '0644',
+    target  => "${my_homedir}/dotfiles/tm_properties",
+    require => Repository["${my_homedir}/dotfiles"],
   }
 
 
