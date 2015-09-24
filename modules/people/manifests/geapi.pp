@@ -51,7 +51,7 @@ class people::geapi {
   }
   
   
- include people::geapi::menubarclock
+ include people::geapi::osx::menubarclock
 
 
   include iterm2::colors::solarized_light
