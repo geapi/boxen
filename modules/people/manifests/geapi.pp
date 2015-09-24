@@ -50,6 +50,14 @@ class people::geapi {
     require => Repository["${my_homedir}/dotfiles"],
   }
   
+  #copy intellij prefs
+  file { "${my_homedir}/Library/Preferences/IntelliJIdea14":
+      path         => "${my_homedir}/Library/Preferences/IntelliJIdea14",
+      ensure       => directory,
+      source  => "${my_homedir}/dotfiles/ineliij/IntelliJIdea14",
+      recurse      => true,
+      require => Repository["${my_homedir}/dotfiles"],
+    }
   
  include people::geapi::osx::menubarclock
 
