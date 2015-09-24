@@ -51,18 +51,7 @@ class people::geapi {
   }
   
   
-  #custom time format
-  class osx::global::menubarextra::clock (
-    $date_format = "EEE MMM d H.mm.ss"
-  ) {
-    boxen::osx_defaults { 'Set time format for menubar clock':
-      user      => $::boxen_user,
-      key       => 'DateFormat',
-      domain    => 'com.apple.menuextra.clock',
-      value     => $date_format,
-      type      => 'string',
-    }
-  }
+ include people::geapi::menubarclock
 
 
   include iterm2::colors::solarized_light
