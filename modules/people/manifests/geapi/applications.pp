@@ -18,9 +18,15 @@ class people::geapi::applications {
   package {
     'alfred': provider => 'brewcask'
   }
+  
+  package { 'utorrent':
+      ensure   => 'installed',
+      provider => 'appdmg',
+      source   => 'http://download-new.utorrent.com/endpoint/utmac/os/osx/track/stable/'
+    }
 
   class { 'intellij':
     edition => 'ultimate',
     version => '14.1.4'
-}
+  }
 }
