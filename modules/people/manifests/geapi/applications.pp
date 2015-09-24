@@ -8,7 +8,6 @@ class people::geapi::applications {
   include googledrive
   include evernote
   include dropbox
-  include utorrent
   include vlc
   include calibre
   include atom
