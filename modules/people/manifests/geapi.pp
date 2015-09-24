@@ -54,7 +54,7 @@ class people::geapi {
   file { "${my_homedir}/Library/Preferences/IntelliJIdea14":
       path         => "${my_homedir}/Library/Preferences/IntelliJIdea14",
       ensure       => directory,
-      source  => "${my_homedir}/dotfiles/ineliij/IntelliJIdea14",
+      source  => "${my_homedir}/dotfiles/intellij/IntelliJIdea14",
       recurse      => true,
       require => Repository["${my_homedir}/dotfiles"],
     }
