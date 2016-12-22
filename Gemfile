@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "boxen",                  "~> 2.7.2"
+gem "boxen",                  "~> 2.9.0"
 gem "hiera",                  "~> 1.3.3"
 gem "librarian-puppet",       "~> 1.0.9"
 gem "puppet",                 "3.7.1"
@@ -10,8 +10,6 @@ gem "open4",                  "~> 1.3.4"
 gem "rake",                   "10.3.2"
 gem "rspec-puppet",           "1.0.1"
 gem "deep_merge",             "~> 1.0"
-
-gem 'CFPropertyList',         '>= 2.2.6'
 
 group :development do
   gem "aws-sdk-core", "~> 2.0.11"
