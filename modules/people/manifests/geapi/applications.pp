@@ -13,7 +13,7 @@ class people::geapi::applications {
   include screenhero
 
   package {
-    'alfred': provider => 'brewcask'
+    'alfred': provider => 'brewcask',
     'bartender': provider => 'brewcask'
   }
   
