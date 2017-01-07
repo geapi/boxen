@@ -4,7 +4,6 @@ class people::geapi::applications {
   include flux
   include onepassword
   include chrome
-  include divvy
   include googledrive
   include evernote
   include dropbox

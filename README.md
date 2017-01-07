@@ -1,34 +1,49 @@
 # boxen
 boxen script to set up my mac
 
-### manually install:
+### to get going:
 
-- xcode
-- google music
-- adobe cloud
-- menu meters
-- jing
-- uApp
-- omni outliner pro
-- ynab
-- pages
-- numbers
+- install Xcode (run git command in terminal to trigger)
+- update IntelliJ version [here](https://github.com/geapi/boxen/blob/master/modules/people/manifests/geapi/applications.pp)
+- make sure this fork of boxen is [relatively close to the upstream](https://github.com/boxen/our-boxen/blob/master/docs/faq.md#q-how-do-you-upgrade-your-boxen-from-the-public-our-boxen)
+- get boxen locally for the install
+
+```
+sudo mkdir -p /opt/boxen
+sudo chown ${USER}:staff /opt/boxen
+git clone <location of my new git repository> /opt/boxen/repo
+cd /opt/boxen/repo
+./script/boxen
+```
+
+
+
+### After boxen is done
+
+- check that all apps from [here](https://github.com/geapi/boxen/blob/master/modules/people/manifests/geapi/applications.pp) are installed.
+
+Then install more:
+- [dropbox](https://www.dropbox.com/downloading)
+- [google music](https://play.google.com/music/listen?u=0#/manager)
+- [adobe cloud](http://www.adobe.com/creativecloud/desktop-app.html)
+- [jing](https://www.techsmith.com/download/jing/)
+- [omni outliner pro](https://www.omnigroup.com/omnioutliner), there is also a copy on g-drive
+- [ynab](http://classic.youneedabudget.com/)
 - office
-- zoom.us
-- display meter
-- ecoute
-- android file transfer
-- private internet access
-- Quicken 2007
+- [zoom.us](https://zoom.us/download#client_4meeting)
+- [private internet access](https://www.privateinternetaccess.com/pages/client-support/)
+- Quicken 2007 (in g-drive)
 
 
 ### manual set-up
-
-* Install developer tools `xcode-select --install`
-
-* Install [gdrive](https://www.google.com/drive/download/)
+*  for modifications to the boxen repo clone it into workspace
+    * make changes there 
+    * push
+    * pull with the one in `/opt/boxen/repo`
+    * re-run `./script/boxen` there
 
 * Install via AppStore
+  * Things
   * Divvy (enable access: 'System Preferences' :  'Security & Privacy' : 'Privacy' : 'Accessibility', add it to allowd apps)
   * Slack
 
@@ -38,8 +53,9 @@ boxen script to set up my mac
 	* run `sudo scutil --set HostName [NewHostNameHere]` on command line
 
 * Machine Hygiene
-  * Add login items
+  * Add login items under Security & Privacy
     * Divvy
+    * Dropbox
     * iTerm
   * Start Menu Meter in _System Preferences_ and show the cpu usage as graph
   * Start Chrome, set it as default browser and login
