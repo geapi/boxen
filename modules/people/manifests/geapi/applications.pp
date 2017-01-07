@@ -11,10 +11,10 @@ class people::geapi::applications {
   include firefox
   include omnigraffle::pro
   include screenhero
-  include bartender
 
   package {
     'alfred': provider => 'brewcask'
+    'bartender': provider => 'brewcask'
   }
   
   package { 'utorrent':

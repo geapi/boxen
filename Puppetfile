@@ -70,7 +70,6 @@ github "textmate",      "1.1.0"
 github "iterm2", "1.2.5"
 github "flux", "1.0.1"
 github "onepassword", "1.1.5"
-github "bartender", "1.0.5"
 
 github "chrome", "1.2.0"
 github "divvy", "1.0.1"
