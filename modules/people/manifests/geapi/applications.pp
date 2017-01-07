@@ -14,6 +14,7 @@ class people::geapi::applications {
   include firefox
   include omnigraffle::pro
   include screenhero
+  include bartender
 
   package {
     'alfred': provider => 'brewcask'
@@ -27,6 +28,6 @@ class people::geapi::applications {
 
   class { 'intellij':
     edition => 'ultimate',
-    version => '14.1.4'
+    version => '2016.3.2'
   }
 }
