@@ -13,10 +13,13 @@ class people::geapi::applications {
   include screenhero
 
   package {
-    'alfred': provider => 'brewcask',
+    'alfred': provider => 'brewcask'
+  }
+
+  package {
     'bartender': provider => 'brewcask'
   }
-  
+
   package { 'utorrent':
       ensure   => 'installed',
       provider => 'appdmg',
