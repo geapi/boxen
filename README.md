@@ -33,6 +33,7 @@ Then install more:
 - [zoom.us](https://zoom.us/download#client_4meeting)
 - [private internet access](https://www.privateinternetaccess.com/pages/client-support/)
 - Quicken 2007 (in g-drive)
+- [Sonos App](http://www.sonos.com/en-us/controller-app)
 
 
 ### manual set-up
