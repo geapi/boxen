@@ -21,6 +21,7 @@ cd /opt/boxen/repo
 ### After boxen is done
 
 - check that all apps from [here](https://github.com/geapi/boxen/blob/master/modules/people/manifests/geapi/applications.pp) are installed.
+- get [java](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 
 
 Then install more:
 - [dropbox](https://www.dropbox.com/downloading)
